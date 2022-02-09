@@ -1,0 +1,41 @@
+
+
+:root{
+    --background: #FFFFFF;
+    --red: ##FFDEDE;
+    --grey: #DCDCDC;
+    --black: #000000;
+
+    --button-background: #E7E7E7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background: var(--background);
+    -webkit-font-smooth: antialiased;
+}
+
+body, input, textarea, button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+
+button {
+    cursor: pointer;
+}
+
+[disabled]{
+    opacity: 0.6;
+    cursor: not-allowed;
+}
