@@ -1,4 +1,78 @@
 body {
-    max-width: 600px;
-    background-color: red;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    box-shadow: -5px 4px 6px 0 rgba(0, 0, 0, 0.164);
+    background-color: var(--background);
+    position: sticky;
+    top: 0px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body);
+    padding-top: 24px;
+    height: 100%;
+    overflow-y: scroll;
+    
+}
+
+.message-container {
+    background-color: var(--background);
+    padding: 16px 8px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+
+.send-message-container {
+    display: flex;
+    justify-content: space-between;
+    position: static;
+    bottom: 0;
+}
+
+.enter-leave-room {
+    background-color: var(--grey);
+} 
+
+.private-room {
+    background-color: var(--red);
+}
+
+.send-message-container  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+.send-message-container input {
+    font-size: 18px;
+    font-weight: 400;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 8px 16px;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+}
+
+.send-message-container button {
+    background-color: var(--background);
+    padding: 8px 16px;
+}
+
+
+.send-message-container ion-icon {
+    font-size: 26px;
 }

@@ -1,11 +1,9 @@
-
-
 :root{
     --background: #FFFFFF;
-    --red: ##FFDEDE;
+    --red: #FFDEDE;
     --grey: #DCDCDC;
     --black: #000000;
-
+    --body: #F3F3F3;
     --button-background: #E7E7E7;
 }
 
@@ -33,6 +31,8 @@ a{
 
 button {
     cursor: pointer;
+    outline: none;
+    border: none;
 }
 
 [disabled]{
