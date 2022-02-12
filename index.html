@@ -16,6 +16,7 @@
         <img src="./assets/logo.svg" alt="logo bate papo uol">
         <img src="./assets/vector.svg" alt="figura de uma pessoa atras de outra">
     </header>
+
     <main>
         <div class="message-container enter-leave-room">
             <p>
@@ -24,7 +25,6 @@
                 entra na sala
             </p>
         </div>
-
         <div class="message-container  private-room">
             <p>
                 <h5>(09:21:45)</h5>
@@ -40,10 +40,8 @@
                 Bom dia <br>
                 Bom dia <br>
                 Bom dia <br>
-                
             </p>
         </div>
-
         <div class="message-container">
             <p>
                 
@@ -54,13 +52,62 @@
         </div>
     </main>
 
+    <section class="modal">
+        <div class="modal-overlay"></div>
+        <div class="content-modal">
+            <h1>Escolha um contato <br> para enviar mensagem</h1>
+            <div class="header-contacts">
+                <ion-icon name="people-circle-outline"></ion-icon>
+                <p>Todos</p>
+            </div>
+            <div class="container-contacts">
+                <div class="contact">
+                    <div>
+                        <ion-icon name="person-circle"></ion-icon>
+                        <p>Irineu</p>
+                    </div>
+                    <ion-icon name="checkmark-sharp"></ion-icon>
+                </div>
+                <div class="contact active">
+                    <div>
+                        <ion-icon name="person-circle"></ion-icon>
+                        <p>Gilberto pode tudo</p>
+                    </div>
+                    <ion-icon name="checkmark-sharp"></ion-icon>
+                </div>
+            </div>
+            <h1>Escolha a visibilidade</h1>
+            <div class="container-privacity">
+                <div class="privacity">
+                    <div>
+                        <ion-icon name="lock-open"></ion-icon>
+                        <p>Público</p>
+                    </div>
+                    <ion-icon name="checkmark-sharp"></ion-icon>
+                </div>
+                <div class="privacity active">
+                    <div>
+                        <ion-icon name="lock-closed"></ion-icon>
+                        <p>Reservadamente</p>
+                    </div>
+                    <ion-icon name="checkmark-sharp"></ion-icon>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <sextion class="send-message-container">
-        <input type="text" placeholder="Escreva aqui...">
+        <div>
+            <input type="text" placeholder="Escreva aqui...">
+            <p class="text-send-message-privacity">Enviando para Dado Dolabella (reservadamente)</p>
+        </div>
         <button type="submit" >
             <ion-icon name="paper-plane-outline"></ion-icon>
         </button>
     </sextion>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

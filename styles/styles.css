@@ -49,9 +49,15 @@ main {
 
 .send-message-container  {
     display: flex;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    height: 80px;
+    box-shadow: -5px 4px 6px 0 rgba(0, 0, 0, 0.164);
+    padding: 8px 16px;
+}
+
+.send-message-container >div {
+    flex: 1;
 }
 
 .send-message-container input {
@@ -60,7 +66,17 @@ main {
     width: 100%;
     border: none;
     outline: none;
-    padding: 8px 16px;
+    padding: 8px 0;
+}
+
+.send-message-container p {
+    font-size: 14px;
+    font-weight: 300;
+    display: none;
+}
+
+p.text-send-message-privacity {
+    display: inherit;
 }
 
 input:placeholder-shown {
@@ -70,9 +86,126 @@ input:placeholder-shown {
 .send-message-container button {
     background-color: var(--background);
     padding: 8px 16px;
+    z-index: -1;
 }
-
 
 .send-message-container ion-icon {
     font-size: 26px;
+}
+
+.modal {
+    display: none;
+}
+
+.modal.active{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.modal-overlay {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 60%);
+    display: fixed;
+    z-index: 1;
+}
+
+.content-modal {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+    width: 70vw;
+    text-align: center;
+}
+
+.content-modal h1 {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 24px 24px;
+}
+
+.content-modal ion-icon {
+    font-size: 24px;
+}
+
+.header-contacts {
+    display: flex;
+    flex-direction: row;
+    padding: 4px 20px;
+    font-size: 16px;
+    font-weight: 400;
+    align-items: center;
+}
+
+.header-contacts ion-icon {
+    font-size: 24px;
+}
+
+.header-contacts p {
+    margin-left: 8px;
+}
+
+.container-contacts {
+    overflow-y: scroll;
+}
+
+.privacity,
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0;
+    padding: 0 20px;
+}
+
+.privacity >ion-icon,
+.contact >ion-icon {
+    display: none;
+}
+
+.privacity.active >ion-icon,
+.contact.active >ion-icon {
+    display: inline;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.privacity div,
+.contact div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.privacity p,
+.contact p {
+    margin-left: 8px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 700px) {
+    .content-modal {
+        text-align: left;
+    }
+
+    .privacity,
+    .contact {
+        justify-content: flex-start;
+    }
+
+    .privacity div,
+    .contact div {
+        margin-right: 18px;
+    }
 }
