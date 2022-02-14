@@ -1,5 +1,5 @@
 const userName = {
-    name: 'cleber bambam'
+    name: 'galinho xico liro'
 }
 
 const participants = axios.post('https://mock-api.driven.com.br/api/v4/uol/participants', userName);
@@ -47,6 +47,17 @@ function searchMessages(messages) {
     console.log(messages)
 }
 
-function sendMessage() {
-    alert("clicado")
+function sendMessage(button) {
+    let input = document.querySelector('.send-message-container input').value;
+    let message = {
+        from: `${userName.name}`,
+        to: "Todos",
+        text: `${input}`,
+        type: "message"
+    }
+
+    if (input !== null) {
+        axios.post('https://mock-api.driven.com.br/api/v4/uol/messages', message);
+    }
+    document.querySelector('.send-message-container input').value = "";
 }
