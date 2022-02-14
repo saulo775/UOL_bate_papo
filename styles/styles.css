@@ -114,6 +114,8 @@ main {
     justify-content: center;
     box-shadow: -5px 4px 6px 0 rgba(0, 0, 0, 0.164);
     padding: 8px 16px;
+    position: sticky;
+    bottom: 0;
 }
 
 .send-message-container >div {
@@ -155,6 +157,7 @@ input:placeholder-shown {
 
 .modal {
     display: none;
+    z-index: 2;
 }
 
 .modal.active{

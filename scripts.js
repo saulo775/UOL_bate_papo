@@ -1,12 +1,21 @@
-const object = {
-    name: 'saulo'
+const userName = {
+    name: 'cleber bambam'
 }
 
-const participants = axios.get('https://mock-api.driven.com.br/api/v4/uol/participants');
+const participants = axios.post('https://mock-api.driven.com.br/api/v4/uol/participants', userName);
 const messages = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages');
 
 messages.then(searchMessages);
+setInterval(updateStatus, 5000);
 
+function updateStatus() {
+    axios.post('https://mock-api.driven.com.br/api/v4/uol/status',userName);
+    // userActive.then(ola);
+
+    // function ola(userActive) {
+    //     console.log(userActive);
+    // }
+}
 
 
 function openCloseModal() {
@@ -35,10 +44,9 @@ function searchMessages(messages) {
             </div>
         `
     }
+    console.log(messages)
 }
 
-function name(params) {
-    
+function sendMessage() {
+    alert("clicado")
 }
-
-
