@@ -210,8 +210,10 @@ input:placeholder-shown {
 }
 
 .container-contacts {
+    max-height: 30vh;
     overflow-y: scroll;
 }
+
 
 .privacity,
 .contact {
