@@ -72,6 +72,32 @@ main {
     padding: 16px 8px;
     margin-bottom: 4px;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap ;
+    word-wrap: break-word;
+}
+
+.message-container strong,
+.message-container h5, 
+.message-container p {
+    max-width: 90vw;
+    word-wrap: break-word;
+}
+
+.message-container strong,
+.message-container h5 {
+    max-width: 90vw;
+    margin-right: 8px;
+    word-wrap: break-word;
+}
+
+.status {
+    background-color: var(--grey);
+} 
+
+.private_message {
+    background-color: var(--red);
 }
 
 .send-message-container {
@@ -79,14 +105,6 @@ main {
     justify-content: space-between;
     position: static;
     bottom: 0;
-}
-
-.enter-leave-room {
-    background-color: var(--grey);
-} 
-
-.private-room {
-    background-color: var(--red);
 }
 
 .send-message-container  {
