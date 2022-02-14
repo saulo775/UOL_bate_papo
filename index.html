@@ -12,19 +12,16 @@
     <title>Bate Papo UOL</title>
 </head>
 <body onload="yourName()">
-
     <section class="home-screen">
         <img src="./assets/logo.svg" alt="Logo do bate papo uol">
         <input type="text" placeholder="Digite seu nome">
         <button>Entrar</button>
     </section>
-
     <header>
         <img src="./assets/logo.svg" alt="logo bate papo uol">
         <img src="./assets/vector.svg" onclick="openCloseModal()" alt="simbolo de bate papo">
     </header>
     <main ></main>
-
     <section class="modal" >
         <div class="modal-overlay" onclick="openCloseModal()"></div>
         <div class="content-modal">
@@ -34,7 +31,6 @@
                 <p>Todos</p>
             </div>
             <div class="container-contacts">
-                
             </div>
             <h1>Escolha a visibilidade</h1>
             <div class="container-privacity">
@@ -53,16 +49,13 @@
                     <ion-icon name="checkmark-sharp"></ion-icon>
                 </div>
             </div>
-
         </div>
     </section>
-
     <section class="send-message-container">
         <div>
             <input type="text" placeholder="Escreva aqui...">
-            <!-- <p class="text-send-message-privacity">Enviando para Dado Dolabella (reservadamente)</p> -->
         </div>
-        <button onclick="sendMessage()">
+        <button onclick="sendMessage()" data-identifier="send-message">
             <ion-icon name="paper-plane-outline"></ion-icon>
         </button>
     </section>

@@ -12,22 +12,16 @@ function yourName() {
     const userParticipant = axios.post('https://mock-api.driven.com.br/api/v4/uol/participants', userName);
     
     userParticipant.then(allowedName);
-    userParticipant.catch(nameAlreadyExists)
-
+    userParticipant.catch(nameAlreadyExists);
 }
 
-
 function allowedName(userParticipant) {
-    console.log(userParticipant.status)
-    console.log(userParticipant);
     setInterval(updateStatus, 5000);
     
-    const messages = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages');
-    messages.then(searchMessages);
+    updateMessages();
 }
 
 function nameAlreadyExists(erro) {
-    console.log(erro.response.status)
     if (erro.response.status === 400) {
         alert("nome já existe!!");
         yourName();
@@ -35,12 +29,7 @@ function nameAlreadyExists(erro) {
 }
 
 function updateStatus() {
-    let teste = axios.post('https://mock-api.driven.com.br/api/v4/uol/status',userName);
-    teste.then(teste2);
-
-    function teste2(teste) {
-        console.log(teste.status);
-    }
+    axios.post('https://mock-api.driven.com.br/api/v4/uol/status',userName);
 }
 
 function openCloseModal() {
@@ -54,7 +43,12 @@ function openCloseModal() {
     }
 }
 
+setInterval(updateMessages, 3000);
 
+function updateMessages() {
+    const messages = axios.get('https://mock-api.driven.com.br/api/v4/uol/messages');
+    messages.then(searchMessages);
+}
 
 function searchMessages(messages) {
     let main = document.querySelector('main');
@@ -64,7 +58,7 @@ function searchMessages(messages) {
 
     for (let i = 0; i < data.message.length; i++) {
         main.innerHTML = main.innerHTML + `
-            <div class="message-container ${data.message[i].type}">
+            <div class="message-container ${data.message[i].type}" data-identifier="message">
                     <h5>${data.message[i].time}</h5>
                     <strong>${data.message[i].from}</strong>
                     <p>${data.message[i].text}</p>
@@ -90,8 +84,7 @@ function sendMessage(button) {
 
 function showParticipants(participants) {
     let contacts = document.querySelector('.container-contacts');
-    let participant = participants.data
-    console.log(participant)
+    let participant = participants.data;
 
     for (let i = 0; i < participant.length; i++) {
         contacts.innerHTML = contacts.innerHTML + `
